@@ -1,0 +1,15 @@
+<div class="row" *ngIf="allblogs">
+  <div class="col-md-3" *ngFor="let blog of allblogs" style="border:2px solid black">
+    blogID={{blog.blogid}}
+    <br>
+    title={{blog.blogtitle}}
+    <br>
+    desc={{blog.blogdesc}}<br>
+    body={{blog.blogbody}}
+    <button [routerLink]="['/viewblog',blog.blogid]">view</button>
+  </div>
+  
+</div>
+<div *ngIf="allblogs.length==0">
+  <h3>No Blogs found. Please <a [routerLink]="['/create']">post</a> one!!</h3>
+</div>

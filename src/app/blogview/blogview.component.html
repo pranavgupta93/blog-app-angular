@@ -1,0 +1,9 @@
+<div class="row" *ngIf="currentblog">
+  <div class="col-md-6">
+    id={{currentblog.blogid}}
+    title={{currentblog.blogtitle}}
+    <div [innerHTML]="currentblog.blogbody"></div>
+    <button class="btn btn-primary" [routerLink]="['/edit',currentblog.blogid]">Edit</button>
+    <button class="btn btn-danger" (click)="deleteblog()">Delete</button>
+  </div>
+</div>
